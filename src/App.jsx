@@ -17,7 +17,9 @@ function App() {
   let month = String(today.getMonth() + 1).padStart(2, '0');
   let day = String(today.getDate()).padStart(2, '0');
 
+
   async function getData() {
+
     let url = `https://api.wikimedia.org/feed/v1/wikipedia/en/featured/${year}/${month}/${day}`;
     await fetch(url)
       .then(response => response.json())
@@ -25,19 +27,15 @@ function App() {
         setInformation(data.onthisday)
         localStorage.setItem('information', JSON.stringify(data.onthisday));
       })
+
   }
 
   useEffect(() => {
-    const storedInformation = localStorage.getItem('information');
-    if (storedInformation) {
-      setInformation(JSON.parse(storedInformation))
-
-    } else {
-      getData();
-    }
+    getData();
     setDate(`${day}/${month}`)
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   window.onscroll = function () { scrollFunction() }
