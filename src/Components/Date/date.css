@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -6,6 +6,7 @@
 .date {
     padding: 20px 40px;
 }
+
 .date h1 {
     font-size: 40px;
     font-family: Poppins;
@@ -21,7 +22,7 @@
     cursor: pointer;
 }
 
-@media (max-width:426px) {
+@media (max-width: 426px) {
     .date {
         padding: 10px 10px;
         padding-bottom: 20px;
@@ -31,4 +32,3 @@
         font-size: 23px;
     }
 }
-
