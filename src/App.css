@@ -8,6 +8,8 @@
     margin: 20px 40px;
     cursor: pointer;
     z-index: 10;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
     transition: all ease 0.3s;
 }
 

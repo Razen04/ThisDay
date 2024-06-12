@@ -100,17 +100,17 @@
 
 @media (max-width: 426px) {
     .timeline-fact p {
-        width: 400px;
+        width: 360px;
         font-size: 14px;
     }
 
     .fact-image .img {
-        width: 400px;
+        width: 360px;
         height: 300px;
     }
 
     .title {
-        width: 381px;
+        width: 341px;
         font-size: 14px;
     }
 
