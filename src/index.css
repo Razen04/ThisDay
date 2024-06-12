@@ -1,0 +1,10 @@
+body {
+  background-color: #2A2A2A;
+  color: white;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
