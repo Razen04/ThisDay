@@ -6,9 +6,12 @@ import './Facts.css'
 import black from '../../assets/black.jpg'
 import arrow from '../../assets/arrow.svg'
 import 'animate.css'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, A11y, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/bundle';
 
 const Facts = ({ information }) => {
-
 
     return (
         <div>
@@ -21,33 +24,65 @@ const Facts = ({ information }) => {
                                 <h1 className='poppins-light animate__animated animate__fadeInLeftBig'>
                                     {eachInfo.year}
                                 </h1>
+                                <h2 className='poppins-light animate__animated animate__fadeInLeftBIg'>{
+                                    moment((moment(eachInfo.year, 'YYYY')).format('YYYY-MM-DD')).fromNow()
+                                }</h2>
                             </div>
                         </div>
                     </div>
                     <div className="timeline-component">
-                        {eachInfo.pages.map((eachPage, index) => (
-                            <div className="timeline-fact" key={index}>
-                                <div className="fact-information">
-                                    <h2 className='poppins-light animate__animated animate__fadeInLeftBIg'>{
-                                        moment((moment(eachInfo.year, 'YYYY')).format('YYYY-MM-DD')).fromNow()
-                                    }</h2>
-                                    <div key={index}>
-                                        <p className='poppins-light animate__animated animate__fadeInLeftBig'>{eachPage.extract}</p>
-                                        <div className="fact-image">
-                                            <img className='fact-image img animate__animated animate__fadeInLeft' src={eachPage.originalimage ? eachPage.originalimage.source : black} alt="Rover" />
-                                            <div className="title animate__animated animate__fadeInLeft">
-                                                <h1 className='animate__animated animate__fadeInLeftBig'>{eachPage.titles.normalized} <br />
-                                                    {eachPage.description}
-                                                </h1>
-                                                <a href={eachPage.content_urls.desktop.page} target='_blank' className='animate__animated animate__fadeInLeftBig'><img src={arrow} alt="Arrow" /></a>
+                        <Swiper
+                            modules={[Navigation, Pagination, A11y, EffectFade]}
+                            spaceBetween={50}
+                            slidesPerView={1}
+                            navigation
+                            pagination={{ clickable: true }}
+                            autoHeight={true}
 
-
+                        >
+                            <SwiperSlide key={`main-${index}`}>
+                                <div className="timeline-fact">
+                                    <div className="fact-information">
+                                        <div>
+                                            <p className='poppins-light animate__animated animate__fadeInLeftBig'>{eachInfo.text}</p>
+                                            <div className="fact-image">
+                                                <img className='fact-image img animate__animated animate__fadeInLeft' src={eachInfo.pages[0].originalimage ? eachInfo.pages[0].originalimage.source : black} alt="Image" />
+                                                <div className="title animate__animated animate__fadeInLeft">
+                                                    <h1 className='animate__animated animate__fadeInLeftBig'>{eachInfo.pages[0].titles.normalized} <br />
+                                                        {eachInfo.pages[0].description}
+                                                    </h1>
+                                                    <a href={eachInfo.pages[0].content_urls.desktop.page} target='_blank' rel='noopener noreferrer' className='animate__animated animate__fadeInLeftBig'>
+                                                        <img src={arrow} alt="Arrow" />
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            </SwiperSlide>
+                            {eachInfo.pages.slice(1).map((eachPage, pageIndex) => (
+                                <SwiperSlide key={`page-${index}-${pageIndex}`}>
+                                    <div className="timeline-fact">
+                                        <div className="fact-information">
+                                            <div>
+                                                <p className='poppins-light animate__animated animate__fadeInLeftBig'>{eachPage.extract}</p>
+                                                <div className="fact-image">
+                                                    <img className='fact-image img animate__animated animate__fadeInLeft' src={eachPage.originalimage ? eachPage.originalimage.source : black} alt="Image" />
+                                                    <div className="title animate__animated animate__fadeInLeft">
+                                                        <h1 className='animate__animated animate__fadeInLeftBig'>{eachPage.titles.normalized} <br />
+                                                            {eachPage.description}
+                                                        </h1>
+                                                        <a href={eachPage.content_urls.desktop.page} target='_blank' rel='noopener noreferrer' className='animate__animated animate__fadeInLeftBig'>
+                                                            <img src={arrow} alt="Arrow" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
 
 
 

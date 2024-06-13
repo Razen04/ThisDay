@@ -25,8 +25,9 @@
 
 .year {
     color: blue;
-    transform: translateY(-38%);
+    transform: translateY(-20%);
     padding-left: 14px;
+    width: max-content;
 
 }
 
@@ -34,15 +35,26 @@
     font-weight: bolder;
 }
 
+.year h2 {
+    color: white;
+}
+
 .timeline-component {
+    padding: 0 11px;
+    max-width: 800px;
+    width: 100%;
+    margin-top: 70px;
     margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
 
 }
 
 .timeline-fact {
-    max-width: 90%;
-    margin-top: 20px;
-    padding-left: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .timeline-fact h2 {
@@ -53,13 +65,6 @@
     text-align: justify;
     width: 800px;
 }
-
-
-.flex {
-    display: flex;
-    align-items: center;
-}
-
 
 
 .fact-image {
@@ -73,7 +78,6 @@
     height: 500px;
     background-size: cover;
     border-radius: 8px;
-    border-radius: none;
 }
 
 .title {
