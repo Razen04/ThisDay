@@ -124,6 +124,16 @@
 }
 
 @media (max-width: 480px) {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+
+    .timeline-component {
+        padding: 0 5px;
+    }
+
     .timeline-fact p {
         width: 380px;
         font-size: 14px;
