@@ -125,13 +125,13 @@
 
 @media (max-width: 480px) {
 
-    .swiper-button-prev,
-    .swiper-button-next {
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
         display: none;
     }
 
     .timeline-component {
-        padding: 0 5px;
+        padding: 0;
     }
 
     .timeline-fact p {
