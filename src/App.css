@@ -17,3 +17,9 @@
     background: white;
     fill: black;
 }
+
+@media (max-width: 480px) {
+    .back-to-top svg {
+        margin: 20px 10px;
+    }
+}

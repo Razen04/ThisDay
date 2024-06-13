@@ -97,7 +97,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 375px) {
     .timeline-fact p {
         width: 330px;
         font-size: 14px;
@@ -114,8 +114,29 @@
     }
 
     .timeline {
-        margin:  0 5px;
+        margin: 0 5px;
     }
 
-    
+
+}
+
+@media (max-width: 480px) {
+    .timeline-fact p {
+        width: 380px;
+        font-size: 14px;
+    }
+
+    .fact-image .img {
+        width: 380px;
+        height: 300px;
+    }
+
+    .title {
+        width: 360px;
+        font-size: 9px;
+    }
+
+    .timeline {
+        margin: 0 5px;
+    }
 }
