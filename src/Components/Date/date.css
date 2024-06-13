@@ -22,7 +22,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 426px) {
+@media (max-width: 480px) {
     .date {
         padding: 10px 10px;
         padding-bottom: 20px;

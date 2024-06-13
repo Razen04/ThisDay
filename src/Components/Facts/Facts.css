@@ -97,7 +97,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 426px) {
+@media (max-width: 480px) {
     .timeline-fact p {
         width: 330px;
         font-size: 14px;
