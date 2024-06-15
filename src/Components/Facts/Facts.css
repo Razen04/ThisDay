@@ -52,11 +52,6 @@
 
 }
 
-.timeline-fact {
-    display: flex;
-    justify-content: center;
-}
-
 .timeline-fact h2 {
     font-weight: bold;
 }
@@ -100,30 +95,17 @@
     cursor: pointer;
 }
 
-@media (max-width: 375px) {
-    .timeline-fact p {
-        width: 330px;
-        font-size: 14px;
-    }
-
-    .fact-image .img {
-        width: 330px;
-        height: 300px;
-    }
-
-    .title {
-        width: 311px;
-        font-size: 9px;
-    }
-
-    .timeline {
-        margin: 0 5px;
-    }
-
-
+.loading {
+    padding: 40px;
+    font-size: 100px;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 376px) and (max-width: 480px) {
+
+    .loading {
+        padding-left: 15px;
+        font-size: 50px;
+    }
 
     .swiper-button-prev::after,
     .swiper-button-next::after {
@@ -132,6 +114,10 @@
 
     .timeline-component {
         padding: 0;
+    }
+
+    .timeline-fact {
+        padding-left: 10px;
     }
 
     .timeline-fact p {
@@ -152,4 +138,38 @@
     .timeline {
         margin: 0 5px;
     }
+}
+
+@media (max-width: 376px) {
+
+    .loading {
+        padding-left: 15px;
+        font-size: 25px;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        display: none;
+    }
+
+    .timeline-fact p {
+        width: 275px;
+        font-size: 14px;
+    }
+
+    .fact-image .img {
+        width: 275px;
+        height: 300px;
+    }
+
+    .title {
+        width: 255px;
+        font-size: 9px;
+    }
+
+    .timeline {
+        margin: 0 5px;
+    }
+
+
 }

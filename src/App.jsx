@@ -6,6 +6,8 @@ import 'animate.css'
 
 function App() {
 
+  
+
   const [date, setDate] = useState(null)
 
   const [information, setInformation] = useState([])
@@ -30,11 +32,12 @@ function App() {
 
   }
 
+
+
   useEffect(() => {
+    
     getData();
     setDate(`${day}/${month}`)
-
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

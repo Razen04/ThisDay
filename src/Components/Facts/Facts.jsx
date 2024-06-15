@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React from 'react'
+import React, { useState } from 'react'
 import moment from 'moment'
 import './Facts.css'
 import black from '../../assets/black.jpg'
@@ -12,6 +12,25 @@ import 'swiper/css';
 import 'swiper/css/bundle';
 
 const Facts = ({ information }) => {
+    const [loading, setLoading] = useState(true)
+
+    setTimeout(() => {
+        setLoading(false)
+    }, 2000)
+
+    if(loading) {
+        return (
+            <div className='loading animate__animated animate__fadeInLeft'>
+                Loading...
+            </div>
+        )
+    }
+
+    function calculateYearsAgo(year) {
+        const currentYear = moment().year()
+        const difference = currentYear - year
+        return `${difference} years ago`
+    }
 
     return (
         <div>
@@ -22,14 +41,15 @@ const Facts = ({ information }) => {
                             <div className="timeline-point"></div>
                             <div className="year">
                                 <h1 className='poppins-light animate__animated animate__fadeInLeftBig'>
-                                    {eachInfo.year}
+                                    {eachInfo.year < 0 ? `${Math.abs(eachInfo.year)}BCE` : eachInfo.year}
                                 </h1>
                                 <h2 className='poppins-light animate__animated animate__fadeInLeftBIg'>{
-                                    moment((moment(eachInfo.year, 'YYYY')).format('YYYY-MM-DD')).fromNow()
+                                    calculateYearsAgo(eachInfo.year)
                                 }</h2>
                             </div>
                         </div>
                     </div>
+
                     <div className="timeline-component">
                         <Swiper
                             modules={[Navigation, Pagination, A11y, EffectFade]}

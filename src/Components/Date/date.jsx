@@ -29,7 +29,7 @@ const Time = ({ information, date }) => {
         <div className='date'>
             <h1 className='poppins-light animate__animated animate__fadeInDownBig'>Today</h1>
             <h1 className='time poppins-light animate__animated animate__fadeInDownBig'>{date}</h1>
-            <h2 className='small-screen poppins-light animate__animated animate__fadeInDownBig'>{count} events from {endYear}AD - {startYear}AD</h2>
+            <h2 className='small-screen poppins-light animate__animated animate__fadeInDownBig'>{count} events from {endYear < 0 ? `${Math.abs(endYear)}BCE` : `${endYear}AD`} - {startYear}AD</h2>
         </div>
     )
 }
