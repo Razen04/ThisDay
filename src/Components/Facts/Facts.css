@@ -100,7 +100,79 @@
     font-size: 100px;
 }
 
-@media (min-width: 376px) and (max-width: 480px) {
+@media (max-width: 374px) {
+
+    .loading {
+        padding-left: 15px;
+        font-size: 25px;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        display: none;
+    }
+
+    .timeline-fact p {
+        width: 275px;
+        font-size: 14px;
+    }
+
+    .fact-image .img {
+        width: 275px;
+        height: 300px;
+    }
+
+    .title {
+        width: 255px;
+        font-size: 9px;
+    }
+
+    .timeline {
+        margin: 0 5px;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 424px) {
+
+    .loading {
+        padding-left: 15px;
+        font-size: 50px;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        display: none;
+    }
+
+    .timeline-component {
+        padding: 0;
+    }
+
+    .timeline-fact {
+        padding-left: 10px;
+    }
+
+    .timeline-fact p {
+        width: 332px;
+        font-size: 14px;
+    }
+
+    .fact-image .img {
+        width: 332px;
+        height: 300px;
+    }
+
+    .title {
+        width: 312px;
+        font-size: 9px;
+    }
+
+    .timeline {
+        margin: 0 5px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
 
     .loading {
         padding-left: 15px;
@@ -140,36 +212,5 @@
     }
 }
 
-@media (max-width: 376px) {
-
-    .loading {
-        padding-left: 15px;
-        font-size: 25px;
-    }
-
-    .swiper-button-prev::after,
-    .swiper-button-next::after {
-        display: none;
-    }
-
-    .timeline-fact p {
-        width: 275px;
-        font-size: 14px;
-    }
-
-    .fact-image .img {
-        width: 275px;
-        height: 300px;
-    }
-
-    .title {
-        width: 255px;
-        font-size: 9px;
-    }
-
-    .timeline {
-        margin: 0 5px;
-    }
 
 
-}

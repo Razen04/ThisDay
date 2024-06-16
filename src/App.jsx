@@ -63,6 +63,9 @@ function App() {
 
   return (
     <div className="app">
+      <div className='progress-bar'>
+
+      </div>
       <Time information={information} date={date} />
       <Facts information={information} />
       <div className="back-to-top" onClick={handleScroll}>
